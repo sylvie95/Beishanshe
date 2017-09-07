@@ -55,7 +55,7 @@
 			
 			<!-- 上部登录注册模块 -->
 			<div id="login_block" style="width:100px;height:100%;float:right;">
-				<span style="display:block;margin:13px 10px; width:100%;height:100%;text-align:center;color:#666666;"><a style="color:#666666">登录</a>/<a style="color:#666666">注册</a></span>
+				<span style="display:block;margin:13px 10px; width:100%;height:100%;text-align:center;color:#666666;"><a id="login_a" href="javascript:void(0)" style="color:#666666">登录</a>/<a id="register_a" href="javascript:void(0)" style="color:#666666">注册</a></span>
 				<div id="userMenu" style=" border:1px solid red;width:100px;height:100px;margin-top:-26px;float:right;position:fixed;background:red; display:none;">
 					<span style="display:block;width:100%;height:33%;">个人中心</span>
 					<span style="display:block;width:100%;height:33%;">我的Bug</span>
@@ -68,7 +68,7 @@
 </header>
 
 <!--登录模块-->
-<div style="display:;">
+<div id="login_register_div" style="display:none;">
 	<!-- 登录 -->
 	<div style="width:100%;height:100%; position:fixed; z-index:9999; background:#000; opacity:0.6;">
 	
@@ -77,39 +77,40 @@
 		<!--选项 -->
 		<div style="width:100%;height:50px; background:#FFF;  text-align:center;opacity:none;">
 			<div style="width:90%; height:97%; margin-left:5%; border-bottom:1px solid #CCCCCC;opacity: 1">
-				<span><a href="#" style="font-size:18px;color:#F01400;padding:18px 0px 1px;width:30%;height:60%;display:inline-block; float:left; border-bottom:1px solid red;">登录</a></span><span><a href="#" style="font-size:18px;color:#8D7DA1;padding:18px 0px 1px;width:30%;height:60%;display:inline-block; float:left; border-bottom:1px solid #CCCCCC;">注册</a></span>
-				<img style="width:30px;height:30px; float:right;margin-top:10px; cursor:pointer;" src="images/body01.png"/>
+				<span><a id="login_xuanxaing_a" href="javascript:void(0)" style="font-size:18px;padding:18px 0px 1px;width:30%;height:60%;display:inline-block; float:left;color:#F01400;border-bottom:1px solid red;">登录</a></span>
+				<span><a id="register_xuanxaing_a" href="javascript:void(0)" style="font-size:18px;padding:18px 0px 1px;width:30%;height:60%;display:inline-block; float:left;color:#8D7DA1;border-bottom:1px solid #CCCCCC;">注册</a></span>
+				<img id="close_login_register_img" style="width:30px;height:30px; float:right;margin-top:10px; cursor:pointer;" src="images/body01.png"/>
 			</div>
 		</div>
 		
 		<!-- 登录输入框 -->
-		<form style="display:none;">
+		<form id="login_form" style="display:none;">
 			<div style="width:100%;height:230px; background:#FFF; text-align:center;">
-				<input style="margin-top:20px;width:80%; height:30px; border:1px solid #CCCCCC;" type="text" placeholder="请输入登录手机号" />
-				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:block; text-align:justify;">请输入正确的邮箱或手机号</label>
-				<input style="margin:20px 20px 0px 20px;;width:80%; height:30px; border:1px solid #CCCCCC;" type="text" placeholder="6-16位密码，区分大小写，不能用空格" />
-				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:block; text-align:justify;">请输入6-16位密码，区分大小写，不能使用空格！</label>
+				<input id="login_input" style="margin-top:20px;width:80%; height:30px; border:1px solid #CCCCCC;" type="text" placeholder="请输入登录手机号" />
+				<label id="login_label" style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:none; text-align:justify;">请输入正确的手机号</label>
+				<input id="login_password_input" style="margin:20px 20px 0px 20px;;width:80%; height:30px; border:1px solid #CCCCCC;" type="password" placeholder="6-16位密码，区分大小写，不能用空格" />
+				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:none; text-align:justify;">请输入6-16位密码，区分大小写，不能使用空格！</label>
 				<span style=" margin-top:5%;width:100%;height:30px; display:inline-block; float:left; vertical-align:middle;"><input style="margin-left:-40px;" type="checkbox"/><span style="font-size:14px;color:#787D82;">七天内自动登录</span><a href="#" style="font-size:14px;color:#787D82;width:30%;height:30px; float:right;margin-right:3%;">忘记密码</a></span>
 				<input style="margin-top:10px;width:80%; height:50px; background:#F01400; border:none; letter-spacing:5px; font-size:14px; color:#FFF;" type="button" value="登录" />
 			</div>
 		</form>
 		<!-- 注册form表单 -->
-		<form style="display:;">
+		<form id="register_form_1" style="display:;">
 			<div style="width:100%;height:230px; background:#FFF; text-align:center;">
-				<input style="margin-top:20px;width:80%; height:30px; border:1px solid #CCCCCC;" type="text" placeholder="请输入注册手机号" />
-				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:block; text-align:justify;">请输入正确的邮箱或手机号</label>
-				<span style="width:80%;margin-left:10%; height:30px; display:block;margin-top:20px;">
-					<input style="margin-right:20px;width:35%; height:30px; border:1px solid #CCCCCC; float:left;" type="text" placeholder="请输入验证码" />
+				<input id="phoneNum_input" style="margin-top:20px;width:80%; height:30px; border:1px solid #CCCCCC;" type="text" placeholder="请输入注册手机号" />
+				<label id="register_label" style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:none; text-align:justify;">请输入正确的手机号</label>
+				<span style="width:80%;margin-left:10%; height:32px; display:block;margin-top:20px;">
+					<input id="register_yanzhengma_input" style="margin-right:20px;width:35%; height:30px; border:1px solid #CCCCCC; float:left;" type="text" placeholder="请输入验证码" />
 					<!-- <span style="width:80px;height:100%; border:1px solid red; display:block; float:left;"></span> -->
 					<img id="imgCode" src="code.jpg" style="width:80px;height:100%; display:block; float:left;"/>
-					<img id="codeA" style="cursor:pointer;margin-top:-3px;margin-left:-20px;" src="images/shuaxin.png"/>
+					<img id="codeA" style="cursor:pointer;margin-top:-1px;margin-left:-20px;" src="images/shuaxin.png"/>
 				</span>
-				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:block; text-align:justify; float:left;">验证码错误！</label>
+				<label style="margin-left:10%;width:80%;height:0px;font-size:12px;color:#EF1300; display:none; text-align:justify; float:left;">验证码错误！</label>
 				<input style="margin-top:30px;width:80%; height:50px; background:#F01400; border:none; letter-spacing:5px; font-size:14px; color:#FFF;" type="button" value="注册" />
 			</div>
 		</form>
 		<!-- 短信验证码输入 -->
-		<form style="display:none;">
+		<form id="register_form_2" style="display:none;">
 			<div style="width:100%; height:60px; text-align:center;">
 				<span style="margin-top:20px;display:block; width:80%; height:30px;margin-left:10%; font-size:16px;">填写短信验证码密码完成注册</span>
 				<span style="display:block; width:80%; height:30px;margin-left:10%; font-size:12px; color:#777C81;">短信验证码已发送至<span style="font-size:12px;color:#EF1300;">17688378954</span></span>
@@ -126,7 +127,7 @@
 			</div>
 			<span style=" cursor:pointer;width:100%;height:30px; display:block; text-align:center;font-size:14px; color:#777C81;margin-bottom:10px;">返回修改手机号</span>
 		</form>
-		<div style="width:100%;height:300px; display:none;">
+		<div id="register_form_3" style="width:100%;height:300px; display:none;">
 			<img style="width:140px; height:140px;" src="images/register_success.jpg"/>
 			<span style="width:100%; height:30px;display:block; font-size:18px; font-weight:bold; text-align:center;">恭喜您成功注册！</span>
 			<span style="width:100%; height:30px;display:block; font-size:16px; text-align:center;">资料尚未设置，是否去完善个人资料？</span>
@@ -138,9 +139,8 @@
 	</div>
 	<!-- 注册输入框 -->
 		
-		<div style="width:100%;height:50px; display:none;">
-		
-		</div>
+	<div style="width:100%;height:50px; display:none;">
+	
 	</div>
 </div>
 
@@ -158,6 +158,7 @@
 </footer>
 	
 	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/register_login.js"></script>
 	<script type="text/javascript">
 	/* 验证码模块 */
 	/* function changeImg(){     
