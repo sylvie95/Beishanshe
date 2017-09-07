@@ -32,7 +32,9 @@ public class CodeServlet extends HttpServlet {
     // 字体高度         
     private int fontHeight;         
     private int codeY;         
-    char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',         
+    char[] codeSequence = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'j',         
+            'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',         
+            'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',         
             'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',         
             'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };         
     /**       
@@ -99,7 +101,7 @@ public class CodeServlet extends HttpServlet {
         // 随机产生codeCount数字的验证码。         
         for (int i = 0; i < codeCount; i++) {         
             // 得到随机产生的验证码数字。         
-            String strRand = String.valueOf(codeSequence[random.nextInt(36)]);         
+            String strRand = String.valueOf(codeSequence[random.nextInt(62)]);         
             // 产生随机的颜色分量来构造颜色值，这样输出的每位数字的颜色值都将不同。         
             red = random.nextInt(100);         
             green = random.nextInt(100);         

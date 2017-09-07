@@ -19,7 +19,7 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc.xsd" >
 
-	<context:component-scan base-package="com.yc.tzsc"/>
+	<context:component-scan base-package="com.beishan"/>
 
 	<!-- 引入外部的属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
@@ -34,15 +34,15 @@
     </bean>
 	
 	<!-- 配置mybatis与spring的整合SqlSessionFactory的对象 -->
-	<!-- <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="com.yc.tzsc.entity"/>
+		<property name="typeAliasesPackage" value="com.beishan.entity"/>
 		<property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
-	</bean> -->
+	</bean>
 	
-	<!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yc.tzsc.mapper"/>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.beishan.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-	</bean> -->
+	</bean>
 	
 </beans>

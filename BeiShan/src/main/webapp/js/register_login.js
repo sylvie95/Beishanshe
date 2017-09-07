@@ -52,6 +52,7 @@ function claerInput(){
 	$("#phoneNum_input").val("");
 	//验证码框
 	$("#register_yanzhengma_input").val("");
+	$("#duanxinYanzhengma").val("");
 }
 //改变登录窗口边框颜色
 function changeLoginBorderColor(){
@@ -84,18 +85,33 @@ $("#login_input").blur(
 			$("#login_label").css("display","block");
 		}
 });
+
 //密码输入框校验
 $("#login_password_input").blur( 
 	function () { 
 		var password = $("#login_password_input").val();
 		checkPassword(password);
 });
+
+//注册新密码校验
+$("#register_new_password").blur( 
+	function () { 
+		var password = $("#register_new_password").val();
+		if(checkPassword(password)){
+			//注册页面新密码设置校验
+			$("#register_new_password_label").css("display","none");
+		}else{
+			$("#register_new_password_label").css("display","block");
+		}
+});
+
 //注册输入框手机号码校验
 $("#phoneNum_input").blur( 
 	function () { 
 		var phoneNum = $("#phoneNum_input").val();
 		var result = checkPhone(phoneNum);
 		if(result){
+			//登录页面密码输入校验
 			$("#register_label").css("display","none");
 		}else{
 			$("#register_label").css("display","block");
