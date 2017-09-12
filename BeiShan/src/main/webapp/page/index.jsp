@@ -38,9 +38,9 @@
 <body>
 
 <!--顶部固定模块-->
-<header style=" position:relative; z-index:1000;">
-	<div style="background:#FFF;width:100%;height:50px;text-align:center;border-bottom:1px gray solid; position:fixed">
-		<div style="width:75%;height:100%;margin-left:12.5%;">
+<header id="header" style=" position:relative; z-index:1000;">
+	<div style="background:#FFF;width:100%;height:50px;text-align:center;border-bottom:1px gray solid; position:fixed; background:#F7F7F7;top:0px;">
+		<div style="width:96%;height:100%;margin-left:2%;">
 			<!-- logo标志 -->
 			<div style="width:width:227px;height:50px;float:left;">
 				<img style="width:100%;height:100%;" src="images/notebook_486.png"/>
@@ -53,16 +53,56 @@
 				<span style="display:block;float:left;width:80px;height:50px;text-align:center; font-size:18px;"><a style="border-radius:15px; border:1px solid #FFF; display:block;margin:10px 10px;width:60px;height:30px;padding-top:2px;" href="">论坛</a></span>
 			</div>
 			
-			<!-- 上部登录注册模块 -->
-			<div id="login_block" style="width:100px;height:100%;float:right;">
-				<span style="display:block;margin:13px 10px; width:100%;height:100%;text-align:center;color:#666666;"><a id="login_a" href="javascript:void(0)" style="color:#666666">登录</a>/<a id="register_a" href="javascript:void(0)" style="color:#666666">注册</a></span>
-				<div id="userMenu" style=" border:1px solid red;width:100px;height:100px;margin-top:-26px;float:right;position:fixed;background:red; display:none;">
-					<span style="display:block;width:100%;height:33%;">个人中心</span>
-					<span style="display:block;width:100%;height:33%;">我的Bug</span>
-					<span style="display:block;width:100%;height:33%;">注销</span>
-				</div>
+			<!-- 搜索框 -->
+			<div style="margin-top:10px;padding:1px;display:inline-block;width:220px;height:26px;border-radius:15px;border:1px solid #CCCCCC;">
+				<input type="text" style="font-size:12px;color:#666666;border-top-left-radius:15px;border-bottom-left-radius:15px;width:80%;height:90%;border:none;float:left;"/>
+				<span><img/></span>
 			</div>
 			
+			
+			<!-- 上部登录注册模块 -->
+			<div id="login_block" style="width:100px;height:100%;float:right;">
+				<!-- 未登录 -->
+				<div style="display:block;width:100%;height:100%;">
+					<span style="display:block;margin:13px 10px; width:100%;height:100%;text-align:center;color:#666666;"><a id="login_a" href="javascript:void(0)" style="color:#666666">登录</a>/<a id="register_a" href="javascript:void(0)" style="color:#666666">注册</a></span>
+				</div>
+				<!-- 登录成功 -->
+				<div style="width:100%;height:100%;display:none;">
+					<div  style="width:100px; height:40px;  display:block;margin-top:4px; position:relative;">
+						<div id="user_menu" style="width:100%;height:50px;">
+							<img id="user_menu_img" style=" border:1px solid #CCCCCC;width:40px; height:40px;border-radius:20px;" src="images/not_pic.jpg"/>
+							<div id="user_menu_div" style="display:none;width:250px;height:310px;background:#FFF;position:absolute;top:45px; right:0px;box-shadow:5px 5px 10px #999999;">
+								<!-- 上部头像和用户名余额块 -->
+								<div style="width:100%; height:120px; ">
+									<!-- 头像块 -->
+									<div style="width:35%; height:100%;float:left; position:relative;">
+										<span style=" position:absolute; top:30px; left:20px;display:inline-block;width:72px; height:72px; "><img style="width:100%; height:100%;border-radius:36px; border:1px solid #666666;" src="images/not_pic.jpg"/></span>
+									</div>
+									<div style="width:65%; height:100%;float:right;">
+										<span style="float:left;overflow:hidden;font-size:14px; font-weight:bold;padding-top:12px;margin-top:30px;width:80%; height:20%; display:inline-block;">isolato_LSY</span>
+										<span style="float:left;color:#666666;font-size:12px;width:80%;padding-top:5px;height:25%; display:inline-block;">积分余额：<span style="color:#999999;">5</span></span>
+									</div>
+								</div>
+								<!-- 功能分块 -->
+								<div style="width:100%;height:100px; background:#FFF;">
+									<span style="font-size:12px;color:#666666;margin:3px;width:40%; padding:8px 0px; display:inline-block; background:#E7EDF5;">我的发布</span>
+									<span style="font-size:12px;color:#666666;margin:3px;width:40%; padding:8px 0px; display:inline-block; background:#E7EDF5;">我的参与</span>
+									<span style="font-size:12px;color:#666666;margin:3px;width:40%; padding:8px 0px; display:inline-block; background:#E7EDF5;">个人设置</span>
+									<span style="font-size:12px;color:#666666;margin:3px;width:40%; padding:8px 0px; display:inline-block; background:#E7EDF5;">帮&nbsp;&nbsp;助</span>
+								</div>
+								<!-- 个性签名块  box-shadow:5px 5px 10px #999999; -->
+								<div style="width:80%;height:45px; overflow:hidden; text-align:center; margin-left:10%; border-bottom:1px solid #CCCCCC;">
+									<span style="color:#666666; font-size:12px;">个性签名：</span><span style="color:#666666; font-size:12px;">不要相信人言的左右，要相信自己的判断。</span>
+								</div>
+								<!-- 安全退出 -->
+								<div style="width:100%;height:30px;">
+									<span style="display:block; float:right; padding-top:15px; color:#666666; font-size:12px;margin-right:10%;">安全退出</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>
@@ -167,6 +207,8 @@
 	<script type="text/javascript" src="js/register_login.js"></script>
 	<!-- 实现注册功能js -->
 	<script type="text/javascript" src="js/register_form_1.js"></script>
+	<!-- 用户功能模块功能js -->
+	<script type="text/javascript" src="js/login_user_menu.js"></script>
 	<script type="text/javascript">
 	/* 验证码模块 */
 	/* function changeImg(){     

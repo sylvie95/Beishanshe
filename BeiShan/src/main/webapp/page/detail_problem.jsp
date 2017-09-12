@@ -29,8 +29,8 @@
 
 <!--顶部固定模块-->
 <header style=" position:relative; z-index:1000;">
-	<div style="background:#FFF;width:100%;height:50px;text-align:center;border-bottom:1px gray solid; position:fixed">
-		<div style="width:75%;height:100%;margin-left:12.5%;">
+	<div style="background:#FFF;width:100%;height:50px;text-align:center;border-bottom:1px gray solid; position:fixed; background:#F7F7F7;top:0px;">
+		<div style="width:96%;height:100%;margin-left:2%;">
 			<!-- logo标志 -->
 			<div style="width:width:227px;height:50px;float:left;">
 				<img style="width:100%;height:100%;" src="images/notebook_486.png"/>
