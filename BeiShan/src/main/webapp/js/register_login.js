@@ -1,27 +1,40 @@
 /*****************************  注册登录模块的js样式  *****************************/
 //点击登录触发登录窗口
-$("#login_a").click( 
-	function(){ 
-		$("#login_register_div").css("display","block");
-		$("#login_form").css("display","block");
-		$("#register_form_1").css("display","none");
-		$("#register_form_2").css("display","none");
-		$("#register_form_3").css("display","none");
-		changeLoginBorderColor();
-});
+function login_a_open(){
+	$("#login_register_div").css("display","block");
+	$("#login_form").css("display","block");
+	$("#register_form_1").css("display","none");
+	$("#register_form_2").css("display","none");
+	$("#register_form_3").css("display","none");
+	changeLoginBorderColor();
+}
 //点击注册触发注册窗口
-$("#register_a").click( 
-	function(){ 
-		$("#login_register_div").css("display","block");
-		$("#login_form").css("display","none");
-		$("#register_form_1").css("display","block");
-		changeRegisterBorderColor();
-});
+function register_a_open(){ 
+	$("#login_register_div").css("display","block");
+	$("#login_form").css("display","none");
+	$("#register_form_1").css("display","block");
+	changeRegisterBorderColor();
+}
+
 //点击关闭登录注册窗口
 $("#close_login_register_img").click( 
 	function(){ 
 		claerInput();
 		$("#login_register_div").css("display","none");
+		$("#register_form_2").css("display","none");
+		$("#register_form_3").css("display","none");
+		$("#imgCode").attr("src", "code.jpg?" +  new  Date().getTime()  );
+		//登录框清空
+		$("#login_input").val("");
+		$("#login_password_input").val("");
+		//注册手机号和验证码框清空
+		$("#phoneNum_input").val("");
+		$("#register_yanzhengma_input").val("");
+		//短信验证码和密码清空
+		$("#duanxinYanzhengma").val("");
+		$("#register_new_password").val("");
+		$("#register_yanzhengma_input").val("");
+//		window.location.reload(true);
 });
 //点击登录框上方的登录选项
 $("#login_xuanxaing_a").click( 
@@ -102,6 +115,15 @@ $("#register_new_password").blur(
 			$("#register_new_password_label").css("display","none");
 		}else{
 			$("#register_new_password_label").css("display","block");
+		}
+});
+//两次密码输入不一致
+$("#register_new_password_again").blur( 
+	function () { 
+		if($("#register_new_password").val()!=$("#register_new_password_again").val()){
+			$("#register_new_password_again_label").css("display","block");
+		}else{
+			$("#register_new_password_again_label").css("display","none");
 		}
 });
 
