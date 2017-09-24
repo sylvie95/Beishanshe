@@ -46,13 +46,12 @@
 
 <!-- 是否注销窗口 -->
 <div id="isZhuxiao" style="display:none">
-	<div style="width:100%;height:100%; position:fixed; z-index:9999; background:#000; opacity:0.6;">
-	</div>
+	<div class="zhebu" style="display:block;width:100%;height:100%; position:fixed; z-index:9999; background:#000; opacity:0.6;"></div>
 	<div class="alert alert-warning" style="border-radius:15px;top:25%;left:42.5%;width:17%; position:fixed; z-index:100000; background:#FFF; ">
-	    <a id="zhuxiao_close" onclick="zhuxiao_a_close()" style="display:block;height:20px;float:right;margin-right:10px;" href="javascript:void(0)" class="close" data-dismiss="alert">
+	    <a id="zhuxiao_close_a" onclick="zhuxiao_a_close()" style="display:block;height:20px;float:right;margin-right:10px;" href="javascript:void(0)" class="close">
 	        &times;
 	    </a>
-	    <div style="height:80px;" class="display:block;">
+	    <div style="height:80px;">
 	    	<span style="display:block;width:100%; height:20px;margin:20px 0px 15px;">是否注销 ？</span>
     		<div class="btn-group btn-group-sm">
 	    		<button onclick="zhuxiao()" type="button" class="btn btn-default" style="margin-right:20px;">确认</button>

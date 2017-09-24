@@ -24,13 +24,13 @@
 	<!-- 引入外部的属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
 
-	 <!-- 手动配置spring容器整合的bean -->
-    <!-- 数据源对象 -->
+	<!-- 手动配置spring容器整合的bean -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
     	<property name="driverClassName" value="${jdbc.driverClassName}"/>
     	<property name="url" value="${jdbc.url}"/>
     	<property name="username" value="${jdbc.username}"/>
     	<property name="password" value="${jdbc.password}"/>
+    	
     </bean>
 	
 	<!-- 配置mybatis与spring的整合SqlSessionFactory的对象 -->

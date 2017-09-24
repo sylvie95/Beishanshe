@@ -13,6 +13,8 @@ function register_a_open(){
 	$("#login_register_div").css("display","block");
 	$("#login_form").css("display","none");
 	$("#register_form_1").css("display","block");
+	$("#register_form_2").css("display","none");
+	$("#register_form_3").css("display","none");
 	changeRegisterBorderColor();
 }
 
@@ -132,10 +134,27 @@ $("#phoneNum_input").blur(
 	function () { 
 		var phoneNum = $("#phoneNum_input").val();
 		var result = checkPhone(phoneNum);
+		$("#register_label").css("display","none");
 		if(result){
-			//登录页面密码输入校验
 			$("#register_label").css("display","none");
+	    	//校验手机号码是否存在
+	    	$.ajax({
+	    		url: "register/checkPhoneNumisExists",
+	    		data: "phone="+phoneNum,
+	    		cache: false,
+	    		success: function(msg){
+	    		  if(msg == null || msg == ""){
+	    			  $("#register_label").css("display","none");
+	    			  return true;
+	    		  }else{
+	    			  $("#register_label").text("手机号码已经被注册");
+	    			  $("#register_label").css("display","block");
+	    			  return false;
+	    		  }
+	    		}
+			},"json");
 		}else{
+			$("#register_label").text("请输入正确的手机号");
 			$("#register_label").css("display","block");
 		}
 });
@@ -151,6 +170,8 @@ function checkPassword(password){
 //手机正则关系
 function checkPhone(phoneNum){ 
     if(!(/^1[34578]\d{9}$/.test(phoneNum))){ 
+    	$("#register_label").text("请输入正确的手机号");
+    	$("#register_label").css("display","block");
         return false; 
     } else {
     	return true;

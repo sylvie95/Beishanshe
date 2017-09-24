@@ -19,4 +19,5 @@ public class StaticPeram {
 	// 必填:短信模板-可在短信控制台中找到
 	final static String TemplateCode = "SMS_91945080";
 	
+	
 }
