@@ -174,6 +174,7 @@ function checkPhone(phoneNum){
     	$("#register_label").css("display","block");
         return false; 
     } else {
+    	$("#register_label").css("display","none");
     	return true;
     }
 }

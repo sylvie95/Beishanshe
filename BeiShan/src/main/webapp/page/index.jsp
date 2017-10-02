@@ -44,25 +44,12 @@
 <!--顶部固定模块-->
 <jsp:include page="./header.jsp"></jsp:include>
 
-<!-- 是否注销窗口 -->
-<div id="isZhuxiao" style="display:none">
-	<div class="zhebu" style="display:block;width:100%;height:100%; position:fixed; z-index:9999; background:#000; opacity:0.6;"></div>
-	<div class="alert alert-warning" style="border-radius:15px;top:25%;left:42.5%;width:17%; position:fixed; z-index:100000; background:#FFF; ">
-	    <a id="zhuxiao_close_a" onclick="zhuxiao_a_close()" style="display:block;height:20px;float:right;margin-right:10px;" href="javascript:void(0)" class="close">
-	        &times;
-	    </a>
-	    <div style="height:80px;">
-	    	<span style="display:block;width:100%; height:20px;margin:20px 0px 15px;">是否注销 ？</span>
-    		<div class="btn-group btn-group-sm">
-	    		<button onclick="zhuxiao()" type="button" class="btn btn-default" style="margin-right:20px;">确认</button>
-	    		<button onclick="zhuxiao_a_close()" type="button" class="btn btn-default">取消</button>
-			</div>
-		</div>
-	</div>
-</div>
 
 <!--登录模块-->
 <jsp:include page="./loginAndRegister_Div.jsp"></jsp:include>
+
+<!-- 注销模块 -->
+<jsp:include page="./isZhuxiao.jsp"></jsp:include>
 
 <!--中间部分-->
 <article style="width:100%; height:680px; position:relative;">
