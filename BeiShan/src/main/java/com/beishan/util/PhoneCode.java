@@ -16,7 +16,7 @@ public class PhoneCode {
 	private static String code ;
 	
 	public static void main(String[] args) {
-		String phone = "17688378954";
+		String phone = "176xxxx8954";
 		System.out.println(phone);
 //		getPhonemsg(phone);
 	}
